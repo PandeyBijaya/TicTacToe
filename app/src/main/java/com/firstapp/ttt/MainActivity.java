@@ -2,6 +2,8 @@ package com.firstapp.ttt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, reset;
-    TextView winner;
+
     int count;
 
     @Override
@@ -30,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
         btn9= findViewById(R.id.btn9);
         reset= findViewById(R.id.reset);
 
-        winner= findViewById(R.id.winner);
-
         reset();
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
 
 
     }
@@ -48,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         btn7.setText(" ");
         btn8.setText(" ");
         btn9.setText(" ");
-        winner.setText(" ");
 
         start();
     }
@@ -116,11 +121,13 @@ public class MainActivity extends AppCompatActivity {
         {
             if (count==0) {
                 button.setText("X");
+                button.setTextColor(Color.BLUE);
                 count=1;
             }
             else {
                 button.setText("O");
                 count=0;
+                button.setTextColor(Color.GREEN);
             }
 
         }
@@ -149,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             output(a4);
         else if(a2.equals(a5) && a5.equals(a8) && !a5.equals(" "))
             output(a2);
-        else if(a3.equals(a6) && a2.equals(a9) && !a2.equals(" "))
+        else if(a3.equals(a6) && a3.equals(a9) && !a3.equals(" "))
             output(a3);
         else if(a1.equals(a5) && a5.equals(a9) && !a5.equals(" "))
             output(a1);
@@ -161,7 +168,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void output(String n)
     {
-        winner.setText(n+ " is the winner");
+        Intent iNext= new Intent(MainActivity.this, Winner.class);
+
+        iNext.putExtra("winner",n);
+        startActivity(iNext);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -216,11 +226,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
             }
         });
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            reset();
-            }
-        });
+
     }
 }
