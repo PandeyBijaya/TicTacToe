@@ -119,14 +119,14 @@ public class MainActivity extends AppCompatActivity {
     {
         if(button.getText().toString().equals(" "))
         {
-            if (count==0) {
+            if (count%2==0) {
                 button.setText("X");
                 button.setTextColor(Color.BLUE);
-                count=1;
+                count++;
             }
             else {
                 button.setText("O");
-                count=0;
+                count++;
                 button.setTextColor(Color.GREEN);
             }
 
@@ -162,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
             output(a1);
         else if(a3.equals(a5) && a5.equals(a7) && !a7.equals(" "))
             output(a3);
+        else if(count==9) {
+            Toast.makeText(this, "The game was a draw", Toast.LENGTH_SHORT).show();
+            reset();
+        }
         else
             start();
     }
@@ -172,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
 
         iNext.putExtra("winner",n);
         startActivity(iNext);
+        finish();
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

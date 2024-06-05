@@ -32,26 +32,17 @@ public class Winner extends AppCompatActivity {
 
 
         String a= getIntent.getStringExtra("winner");
-        String b=a;
-        if(b.equals("O")) {
-            LL.setBackgroundColor(Color.GREEN);
-            winner.setTextColor(Color.YELLOW);
-        }
 
-
-        else{
-            LL.setBackgroundColor(Color.BLUE);
-            winner.setTextColor(Color.GREEN);
-        }
-
-        winner.setText("Player " +a+ " is the Winner");
+        winner.setText("Winner: Player "+a);
         Toast.makeText(this, "Click Restart to play again", Toast.LENGTH_SHORT).show();
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(iNext);
+                finish();
             }
         });
+
     }
 }

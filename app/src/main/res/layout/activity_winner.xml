@@ -8,21 +8,31 @@
     tools:context=".Winner"
     android:orientation="vertical"
     android:id="@+id/LL"
+    android:background="#FFF"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/winner"
+        android:text="Game Over"
+        android:fontFamily="sans-serif-black"
         android:textSize="30dp"
-        android:textStyle="bold"
+        android:textColor="#000"
         android:layout_marginTop="200dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/winner"
+        android:textSize="40dp"
+        android:textStyle="bold"
         android:text="Hello"
+        android:textColor="#081B97"
         android:shadowColor="#000"
         android:scaleX="1"
-        android:shadowRadius="10"
         android:fontFamily="sans-serif"
         />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
