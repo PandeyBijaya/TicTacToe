@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         btn7.setText(" ");
         btn8.setText(" ");
         btn9.setText(" ");
-
+        count=0;
         start();
     }
 
