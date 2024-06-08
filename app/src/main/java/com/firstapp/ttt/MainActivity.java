@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             output(a1);
         else if(a3.equals(a5) && a5.equals(a7) && !a7.equals(" "))
             output(a3);
-        else if(count==9) {
+        else if(count%9==0) {
             Toast.makeText(this, "The game was a draw", Toast.LENGTH_SHORT).show();
             reset();
         }
@@ -177,60 +177,5 @@ public class MainActivity extends AppCompatActivity {
         iNext.putExtra("winner",n);
         startActivity(iNext);
         finish();
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
             }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Please click reset to play again", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }
